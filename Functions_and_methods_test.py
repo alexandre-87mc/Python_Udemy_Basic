@@ -1,4 +1,4 @@
-#Functions and methods testes
+#Functions and methods test
 #1 - Write a function that calculates the volume of a sphere
 def Vol_sphere(radius1):   #sphere volume commum def
     pi = 3.14
