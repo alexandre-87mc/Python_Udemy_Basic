@@ -1,2 +1,2 @@
-# Curso-Python-Udemy
-Curso de python  iniciante ao avançado.
+# Python-Udemy
+# Python studies
