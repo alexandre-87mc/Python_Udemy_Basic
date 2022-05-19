@@ -1,13 +1,5 @@
-#Projeto 1 - Jogo da velha
-#Premissas:
-#1 - Criar função que desenha tabuleiro. Mapear posições de marcação.
-#2 - Criar função que recebe entrada e escreve em posição correta do tabuleiro.
-    #Tratar entradas que não sejam as esperadas.
-3# - Criar função que confere resultado do jogo e retorna status - vencedor, empate, continua
-4# - Criar função que chama funções, inicia e encerra jogo.
-    #Instruções e comunicados
-
-#ESBOÇO DE DESENHO DE JOGO DA VELHA
+#Project 1 - Hash game
+#HASH GAME PLAN
 #               &               &               
 #               &               &
 #       1       &       2       &       3       
@@ -26,14 +18,16 @@
 #               &               &
 #               &               &
 
-#FUNÇÃO DESENHA JOGO DA VELHA - OK
-def DESENHO_JOGO(posicaoX,posicao0,st):
-    
-    #Declara vetores de posicao
+#FUNCTION DRAW THE GAME
+def DRAW_GAME(entryX,entry0,st):
+
+    #Declare variables
     posX = []
     pos0 = []
 
-    #Inicializa strings que desenham tabuleiro
+    #Initialize variables
+    posX = entryX
+    pos0 = entry0
     L1 = '               &               &               '
     L2 = '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
     seg1 = '               '
@@ -46,86 +40,155 @@ def DESENHO_JOGO(posicaoX,posicao0,st):
     seg8 = '&               &'
     seg9 = '               '
 
-    #Confere comando de posição dado
-    if posicaoX != 0:
-        posX.append(posicaoX)
-    if posicao0 != 0:
-        pos0.append(posicao0)
-        
-
-    #Desenha seguimentos do tabuleiro e marca se presente posicao 0 e X
+    #Draw the table 
     for k in range(0,18):
         if len(pos0) != 0:
             for i in pos0:
-                if i == 1:
-                    seg1 = '       0        '
-                elif i == 2:
+                if i == '1':
+                    seg1 = '       0       '
+                elif i == '2':
                     seg2 = '&      0        &'
-                elif i == 3:
+                elif i == '3':
                     seg3 = '       0        '
-                elif i == 4:
-                    seg4 = '       0        '
-                elif i == 5:
+                elif i == '4':
+                    seg4 = '       0       '
+                elif i == '5':
                     seg5 = '&      0        &'
-                elif i == 6:
+                elif i == '6':
                     seg6 = '       0        '
-                elif i == 7:
-                    seg7 = '       0        '
-                elif i == 8:
+                elif i == '7':
+                    seg7 = '       0       '
+                elif i == '8':
                     seg8 = '&      0        &'
-                elif i == 9:
+                elif i == '9':
                     seg9 = '       0        '
         if len(posX) != 0:
             for i in posX:
-                if i == 1:
+                if i == '1':
                     seg1 = '       X       '
-                elif i == 2:
+                elif i == '2':
                     seg2 = '&      X        &'
-                elif i == 3:
+                elif i == '3':
                     seg3 = '       X        '
-                elif i == 4:
-                    seg4 = '       X        '
-                elif i == 5:
+                elif i == '4':
+                    seg4 = '       X       '
+                elif i == '5':
                     seg5 = '&      X        &'
-                elif i == 6:
+                elif i == '6':
                     seg6 = '       X        '
-                elif i == 7:
-                    seg7 = '       X        '
-                elif i == 8:
+                elif i == '7':
+                    seg7 = '       X       '
+                elif i == '8':
                     seg8 = '&      X        &'
-                elif i == 9:
+                elif i == '9':
                     seg9 = '       X        '
 
-        #Se não há posições nos vetores de posição preenche com posições vazias
+        #Print the table without shots
         if len(pos0) == 0 and len(posX) == 0:
             if k == 5 or k == 11:
                 st = st + L2 + '\n'
             else:
                 st = st + L1 + '\n'
 
-        #Se há posições nos vetores de posição preenche com as posições devidas
+        #Print the players game
         else:
             if k == 5 or k == 11:
                 st = st + L2 + '\n'
-                #print('linha linha printada')
             elif k == 2:
                 st = st + seg1 + seg2 + seg3 + '\n'
-                #print('linha k=2 printada')
             elif k == 8:
                 st = st + seg4 + seg5 + seg6 + '\n'
-                #print('linha k=8 printada')
             elif k == 14:
                 st = st + seg7 + seg8 + seg9 + '\n'
-                #print('linha k=14 printada')
             else:
                 st = st + L1 + '\n'
-                #print('linha vazia printada')
-                #print(st)
-
-
-
     return st
 
+def CALL_GAME():
 
-Tabuleiro = ''
-print(DESENHO_JOGO(2,9,Tabuleiro))
+    #Variables declaration
+    Tabuleiro = ''
+    entryX = []
+    entry0 = []
+    Winner = 0
+    posicaoX = 0
+    posicao0 = 0
+
+
+    #Possibles game combinations
+    g1 = ['1','2','3']
+    g2 = ['4','5','6']
+    g3 = ['7','8','9']
+    g4 = ['1','4','7']
+    g5 = ['2','5','8']
+    g6 = ['3','6','9']
+    g7 = ['1','5','9']
+    g8 = ['3','5','7']
+
+    #Prints welcome
+    print('\nWelcome to the HASH GAME!\n')
+
+    for i in range(0,9):
+
+        #Instruction and input command
+        posicaoX = input('Make your input player 1:\n')
+        entryX.append(posicaoX)
+        print(DRAW_GAME(entryX,entry0,Tabuleiro))
+        posicao0 = input('Make your input player 2:\n')
+        entry0.append(posicao0)
+        print(DRAW_GAME(entryX,entry0,Tabuleiro))
+
+        #If someone made a winner sequence
+        if len(entry0)>=3 or len(entryX)>=3: 
+            if set(g1).intersection(entryX):
+                Winner = 1
+            elif set(g1).intersection(entry0):
+                Winner = 2
+            elif set(g2).intersection(entryX):
+                Winner = 1
+            elif set(g2).intersection(entry0):
+                Winner = 2
+            elif set(g3).intersection(entryX):
+                Winner = 1
+            elif set(g3).intersection(entry0):
+                Winner = 2
+            elif set(g4).intersection(entryX):
+                Winner = 1
+            elif set(g4).intersection(entry0):
+                Winner = 2
+            elif set(g5).intersection(entryX):
+                Winner = 1
+            elif set(g5).intersection(entry0):
+                Winner = 2
+            elif set(g6).intersection(entryX):
+                Winner = 1
+            elif set(g6).intersection(entry0):
+                Winner = 2
+            elif set(g7).intersection(entryX):
+                Winner = 1
+            elif set(g7).intersection(entry0):
+                Winner = 2
+            elif set(g8).intersection(entryX):
+                Winner = 1
+            elif set(g8).intersection(entry0):
+                Winner = 2
+            #If there no winners
+            elif len(entry0) >= 4 and len(entryX) >= 4 and Winner == 0:
+                print('\nEMPATE! JOGUEM NOVAMENTE!\n')
+                break
+            #Print winner
+            if Winner == 1:
+                print('\nPlayer 1(x) is the winner!\n')
+                break
+            elif Winner == 2:
+                print('\nPlayer 2(0) is the winner!\n')
+                break
+            
+        #Calls the game printing function
+        print('\n'+ DRAW_GAME(entryX,entry0,Tabuleiro))
+    return 0
+
+    #Calls the game printing function
+    print('\n'+ DRAW_GAME(entryX,entry0,Tabuleiro))
+
+CALL_GAME()
