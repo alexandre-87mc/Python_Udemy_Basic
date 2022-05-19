@@ -35,5 +35,7 @@ print(list1, list2, list3)
 print(matrix)
 print(len(matrix))
 print(matrix[1][2])
+
+#print list collum
 col1 = [row[0] for row in matrix]
 print(col1)
