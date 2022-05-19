@@ -1,10 +1,10 @@
-#Arquivos
-my_file = open('texto.txt', 'w')
+#Archives - open/read/write
+my_file = open('text.txt', 'w')
 my_file.write('banana\n')
-my_file.write('só presta a caturra')
+my_file.write('Eat 2 bananas')
 my_file.close()
-my_file = open('texto.txt', 'r')
+my_file = open('text.txt', 'r')
 print(my_file.name)
-conteudo = my_file.read()
-print(conteudo)
+contents = my_file.read()
+print(contents)
 my_file.close()
