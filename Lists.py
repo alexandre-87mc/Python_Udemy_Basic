@@ -1,18 +1,28 @@
-#Listas - testes
+#Lists - testes
+
+#Declare, initialize an print list
 my_list = [1,2,3]
 print(my_list)
+
+#Declare, initialize an print list
 my_list2 = [1,2,3,'string']
 print(my_list2)
+
+#Print items, sum two lists, multiply list, count list items
 print(my_list[0])
 print(my_list + my_list2)
 print(my_list*10)
 print(len(my_list))
 a = my_list.count(1)
 print(a)
-my_list.append('josé')
+
+#insert item in list, remove item from list
+my_list.append('john')
 print(my_list)
 my_list.pop(3)
 print(my_list)
+
+#Invert list, create a list of lists = matrix
 nova_list =['a',3,'d']
 print(nova_list)
 nova_list.reverse()
