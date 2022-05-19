@@ -1,4 +1,4 @@
-#Renge method
+#Range method
 rangee = range(0,10,1)
 #exemple
 for i in range(0,100):
