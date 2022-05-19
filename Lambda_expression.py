@@ -18,15 +18,15 @@ square3 = lambda num: num**2
 print(square3(2))
 
 #Lambda function returns pair number
-par = lambda x: x%2 ==0
+pair = lambda x: x%2 ==0
 #print lambda functions
-print(par(3))
-print(par(4))
+print(pair(3))
+print(pair(4))
 
 #Lambda function returns first char
-primeirochar = lambda s: s[0]
-print(primeirochar('Hola mundo!'))
+firstChar = lambda s: s[0]
+print(firstChar('Hola mundo!'))
 
 #Lambda function returns inverted string
-inverte_string = lambda s: s[::-1]
-print(inverte_string('John is a very happy man!'))
+invert_string = lambda s: s[::-1]
+print(invert_string('John is a very happy man!'))
