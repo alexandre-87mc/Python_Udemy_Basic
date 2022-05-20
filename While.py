@@ -1,40 +1,40 @@
-#Exemplos do uso de While
+#While exemples
 x = 1
 while x<10:
-    print('O valor de x é', x)
+    print('The value of x is: ', x)
     x = x+1
 else:
-    print('O valor de x é', 10)
+    print('The value of x is: ', 10)
 
-#Utilizando mais de uma variável
+#Using more than 1 variable
 x = 1
 y = 1
 while x<10 and y<20:
-    print('O valor de x*y é', x*y)
+    print('The value of x*y is ', x*y)
     x = x+1
     y = y+2
 else:
-    print('O valor de x é', x*y)
+    print('The value of x is: ', x*y)
 
-#Utilizando BREAK
+#Using BREAK
 x = 1
-lista =[]
+list1 =[]
 while True:
-    lista += [x]
+    list1 += [x]
     x += 1
     if x>10:
         print(x)
-        print(lista)
+        print(list1)
         break
 
-#Utilizando CONTINUE
-ate = 50
+#Using CONTINUE
+until = 50
 x = 0
-while x<ate:
+while x<until:
     x += 1
     if x%2!=0:
         continue
     if x%2==0:
-        print(x, 'é par')
+        print(x, 'is pair')
 
 
