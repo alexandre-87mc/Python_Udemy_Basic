@@ -1,2 +1,2 @@
 # Python_Udemy
-# Python studies basic
+# Python basic studies 
